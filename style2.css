@@ -1,0 +1,354 @@
+:root {
+  --primary-bg: #042a46;   /* Dark blue background */
+  --accent-orange: #F16031; /* Orange accent */
+}
+
+/* Orange underline under headings */
+.underline {
+height:3px !important; 
+background:var(--accent-orange); 
+bottom:0;
+}
+/* Vertical orange line for quote */
+.quote-box {
+  border-left: 4px solid var(--accent-orange);
+  padding-left: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+}
+/* Section background (light gray like in screenshot) */
+.seminars-section {
+  background-color: #f8f9fa; /* Bootstrap's light gray */
+}
+
+/* White card with rounded corners + shadow */
+.seminar-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 900px;
+  text-align: left;
+}
+.card {
+  border: 1.5px solid #ddd;   /* lighter border */
+  border-radius: 12px;          /* rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* soft shadow */              /* some spacing inside */      /* clean white background */
+}
+
+
+/* Orange text (same as underline color before) */
+.text-orange {
+  color: var(--accent-orange);
+}
+  .mastermind-section {
+    background: var(--primary-bg) /* Dark gradient */
+  }
+.full-orange-line {
+  height: 3px;
+  background-color: var(--accent-orange);
+  width: 50%;              /* keep shorter width */
+  margin: 0 auto;          /* center horizontally */
+}
+
+  .text-orange {
+    color: var(--accent-orange);
+  }
+/* Remove only Bootstrap's default chevron */
+.accordion-button {
+  --bs-accordion-btn-icon: none;
+  --bs-accordion-btn-active-icon: none;
+  box-shadow: none !important;
+  justify-content: space-between;
+   font-weight: 700 !important;
+}
+
+/* Custom orange + / - */
+.accordion-button::after {
+  content: "+";
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000;       /* orange */
+  transform: none !important; /* stop Bootstrap from rotating */
+}
+/* Scoped to mastermind section only */
+.mastermind-section .accordion-button::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: #fff; /* white */
+  background-image: none !important; /* remove bootstrap arrow */
+}
+
+.mastermind-section .accordion-button:not(.collapsed)::after {
+  content: "–";  /* minus sign */
+  color: #fff;   /* white */
+}
+.accordion-button:not(.collapsed)::after {
+  content: "-";
+}
+.text-orange {
+  color: var(--accent-orange) !important;
+}
+.btn-orange {
+  background-color: var(--accent-orange);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+}
+.btn-orange:hover {
+  background-color: var(--accent-orange); /* keep same orange background */
+  color: #1d2440; /* accordion background blue */
+}
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+   /* Banner container */
+.video-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background video */
+.video-banner video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay content */
+.banner-content1 {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  padding: 2rem;
+  color: #fff;
+  margin: 1.5rem 2rem;
+  max-width: 100%;
+}
+
+.banner-content1 h2 {
+  background: var(--accent-orange);
+  padding: 0.2rem;
+  border-radius: 3px;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.banner-content1 h1 {
+  font-size: 4.7rem;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.banner-content1 p {
+  font-size: 1.15rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+/* Desktop (default) */
+.banner-buttons {
+  position: relative;
+  width: 90%;
+  display: flex;
+  justify-content: space-between; /* Apply left, Play right */
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border-radius: 50px; /* pill shape */
+}
+
+/* Apply Now */
+.btn-apply {
+  background: var(--accent-orange);
+  color: #fff;
+}
+.btn-apply:hover {
+  background: #e03d00;
+}
+
+/* Play Video */
+.btn-play {
+  background: #fff;
+  color: var(--accent-orange);
+  border: 1px solid var(--accent-orange);
+}
+.btn-play i {
+  font-size: 1.3rem;
+  color: var(--accent-orange);
+}
+.btn-play:hover {
+  background: #f2f2f2;
+}
+/* Fullscreen video player */
+.fullscreen-video {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+.fullscreen-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent-orange);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.close-btn:hover {
+  color: var(--accent-orange);
+}
+
+/* ================== TABLET ================== */
+@media (max-width: 992px) {
+  .banner-content1 {
+    top: 20%;
+    height: auto;
+    gap: 0.5rem;
+    margin: 1rem;
+  }
+
+  .banner-content1 h1 {
+    font-size: 5rem;
+  }
+
+  .banner-content1 h2 {
+    font-size: 3.5rem;
+  }
+
+  .banner-content1 p {
+    font-size: 1.6rem;
+  }
+    .banner-buttons {
+    padding: 0 3%; /* smaller side gaps */
+  }
+/* 
+  .btn-apply,
+  .btn-play {
+    font-size: 1rem;
+  }
+
+
+  .btn-play {
+    position: static;
+    border: 1px solid var(--accent-orange);
+    margin-left: auto;
+  }
+
+  .banner-buttons {
+    justify-content: flex-start;
+  } */
+}
+
+/* ================== MOBILE ================== */
+@media (max-width: 576px) {
+  .video-banner {
+    height: 60vh;                /* keep compact banner */
+    display: flex;
+    align-items: center;         /* center content vertically */
+    justify-content: flex-start;
+  }
+
+  .banner-content1 {
+    position: relative;
+    width: 84%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* natural flow, no forced gaps */
+    align-items: flex-start;
+    height: 55vh;                /* shrink-wrap content */
+    gap: 0.6rem;                 /* tighter spacing between items */
+    text-align: left;
+    color: #fff;
+    padding: 1rem;
+  }
+
+  .banner-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Apply left, Play right */
+    padding: 0;
+    margin-top: 0.5rem;             /* small breathing space */
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .banner-content1 h2 {
+    font-size: 1rem;
+    margin: 0;
+    background: var(--accent-orange);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+  }
+
+  .banner-content1 h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .banner-content1 p {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+}
+
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .banner-content1 h1 {
+        font-size: 2rem;
+      }
+      .banner-content1 p {
+        font-size: 1rem;
+      }
+    }
+  .container-fluid{
+    max-width:85%
+  }

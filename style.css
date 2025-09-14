@@ -1,0 +1,967 @@
+:root {
+  --support: #F16031;        /* main brand color */
+  --secondary: #073659;      /* dark blue */
+  --accent: #F05F2E;         /* bright orange */
+  --support-alt: #E75F34;    /* secondary accent */
+  --dark: #0F2139;           /* dark background */
+  --navbar-bg: #F9FAFB;      /* navbar background */
+  --font-family-base: "Outfit", sans-serif;
+  --gradient-main: linear-gradient(
+    97.69deg,
+    #073659 -3.19%,
+    #F05F2E 109.44%
+  );
+}
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: #046bd2; /* updated color */
+    color: #fff;         /* icon color */
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  #backToTop.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  #backToTop i {
+    color: #fff; /* ensure the arrow is white */
+    font-size: 18px;
+  }
+/* Banner container */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 550px; /* slightly smaller than before */
+  overflow: hidden;
+  font-family:var(--font-family-base);
+  color: white;
+}
+
+/* Keep your image exactly as it is */
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.banner-content {
+  position: absolute;
+  bottom: 15%;         /* balanced spacing */
+  left: 70px;         /* aligns with Figma */
+  z-index: 2;
+  max-width: 700px;
+  text-align: left;
+}
+
+/* Heading */
+.banner-content h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0 0 2.5rem 0;  /* more space below heading */
+  position: relative;
+  text-align: left;
+}
+
+.banner-content h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -38px;     /* push line further down */
+  width: 22rem;
+  height: 9px;
+  background: var(--support);
+}
+
+
+/* Subheading / paragraph */
+.banner-content p {
+  font-size: 1.8rem;     /* matches screenshot */
+  line-height: 1.3;
+  margin-top: 4rem;
+  text-align: left;
+  max-width: 90%;
+  font-weight:700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .banner {
+    height: 450px;
+  }
+  .banner-content {
+    left: 60px;
+    bottom: 12%;
+    max-width: 85%;
+  }
+  .banner-content h1 {
+    font-size: 38px;
+  }
+  .banner-content p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 420px;
+  }
+  .banner-content {
+    left: 30px;
+    bottom: 10%;
+    max-width: 90%;
+  }
+  .banner-content h1 {
+    font-size: 32px;
+  }
+  .banner-content p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 380px;
+  }
+  .banner-content {
+    bottom: 8%;
+    left: 20px;
+    max-width: 90%;
+  }
+  .banner-content h1 {
+    font-size: 26px;
+  }
+  .banner-content p {
+    font-size: 15px;
+  }
+}
+
+.navbar {
+  padding-top: 0.5rem;    /* reduced top spacing */
+  padding-bottom: 0.5rem; /* reduced bottom spacing */
+  background-color: var(--navbar-bg) !important; /* using your variable */
+  height: 4.8rem; /* ~96px, smaller than 114px */
+}
+
+.navbar-brand img {
+  width: 13rem;       /* fixed width */
+  height: auto;       /* maintain aspect ratio */
+  object-fit: contain;/* prevents distortion */
+  display: block;     /* ensures clean alignment */
+}
+/* Only style the toggle button itself */
+.navbar-toggler {
+  background-color: var(--support) !important; /* orange background */
+  border: none;                        
+  border-radius: 4px;                  
+  padding: 6px 10px;
+  font-size:1rem;
+}
+
+/* Keep the default hamburger icon dark (Bootstrap default) */
+.navbar-toggler-icon {
+  filter: brightness(0) invert(1); /* make it white for contrast */
+}
+
+.nav-link {
+  color: #000 !important;
+  padding-left: 1rem !important;  /* reduced spacing */
+  padding-right: 1rem !important; /* reduced spacing */
+  font-weight: 100;
+  font-family: var(--font-family-base);
+  font-size: 1.125rem; /* slightly smaller font for balance */
+}
+
+
+.nav-link:hover {
+  color: var(--support) !important; /* Match accent color */
+}
+.hero-heading{
+  margin-top:3rem;
+  font-size:3.2rem;
+  font-weight:700;
+}
+/* Tablets */
+/* Tablet */
+@media (max-width: 992px) {
+  .navbar {
+    height: auto;             
+    padding: 10px;        /* Adjusted padding */
+    flex-wrap: wrap;           /* Allow wrapping */
+    justify-content: space-between;
+  }
+
+  .navbar-brand img {
+    max-height: 50px;      
+    max-width:10rem;
+  }
+  .navbar-brand {
+    margin-right: auto !important;  /* force logo to left */
+    margin-left: 0 !important;
+    justify-content: flex-start !important;
+  }
+
+  .nav-link {
+    font-size: 1rem;          
+    padding: 0.6rem 0.9rem;    
+    line-height: normal;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px 15px;       
+    flex-direction: column;   /* Stack items vertically */
+    align-items: flex-start;  /* Align left */
+  }
+  .navbar-brand img {
+    max-height: 45px; 
+    max-width:10rem;       
+  }
+ .navbar-brand {
+    align-self: flex-start !important;
+    margin-left: 0 !important;
+  }
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.5rem;
+    display: block;           /* Full-width clickable links */
+    width: 100%;
+  }
+}
+
+  /* Hover effect for navbar links */
+    .navbar-nav .nav-link {
+      transition: all 0.3s ease;
+      border-radius: 4px;
+      color: #000; /* default black */
+    }
+
+    .navbar-nav .nav-link:hover {
+      background-color:var(--support); /* orange */
+      color: #fff !important; /* white text */
+    }
+    #bannerImg {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+    
+
+#hero-section .container {
+  max-width: 950px;   /* keeps text from stretching too wide */
+  margin: 0 auto;     /* centers the container */
+  padding: 0 20px;    /* left/right padding */
+}
+
+#leaders-section {
+  background-color: #ffffff; /* light gray background */
+  color: #0d1b2a;    
+    margin: 0 auto;     /* centers content */
+  padding-left: 1rem;
+  padding-right: 1rem;       /* dark navy text */
+}
+
+#leaders-section h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+#leaders-section .underline {
+  width: 22rem;
+  height: 9px;
+  background-color:var(--support); /* orange line */
+  border-radius: 1px;
+  margin-top:2rem;
+}
+/* Tablet */
+@media (max-width: 992px) {
+  #leaders-section .underline {
+    width: 14rem;   /* smaller width for tablets */
+    height: 7px;    /* slightly thinner */
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  #leaders-section .underline {
+    width: 10rem;   /* even smaller for mobile */
+    height: 6px;
+  }
+}
+
+#leaders-section .highlight-text {
+  color:var(--support);  /* orange bold text */
+  font-size: 1.8rem;
+  line-height:1.4;
+}
+/* Tablet */
+@media (max-width: 992px) {
+  #leaders-section .highlight-text {
+    font-size: 1.4rem;   /* smaller size */
+    text-align: left;    /* left aligned */
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  #leaders-section .highlight-text {
+    font-size: 1.2rem;   /* even smaller */
+    text-align: left !important;    /* left aligned */
+  }
+}
+@media (min-width: 550px) and (max-width: 800px) {
+  #leaders-section .container {
+    max-width: 600px; /* a bit narrower specifically on tablets */
+  }
+}
+/* Fix for cards between 540px and 750px wide */
+@media (min-width: 540px) and (max-width: 991.98px) {
+  .row.g-4.justify-content-center > .col-md-5 {
+    flex: 0 0 auto;
+    width: 33.3333%; /* same as col-md-4 */
+    max-width: 33.3333%;
+  }
+}
+
+#hero-section1 .container {
+  margin-top: -8rem; /* move content upward, adjust value as needed */
+}
+#hero-section1 {
+  background: var(--gradient-main);
+  min-height: 550px;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-section1 h1 {
+  font-size: 3rem;   /* slightly smaller for long heading */
+  line-height: 1.3;
+}
+
+#hero-section {
+  background: var(--gradient-main);
+  min-height: 450px;
+  padding: 90px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero-section h1 {
+  font-size: 2.8rem;   /* slightly smaller for long heading */
+   line-height: 1.3;
+}
+
+#hero-section p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+}
+.NWW_heading{
+  text-align:center;
+  font-size:3rem
+}
+.executive_heading{
+  font-size:2.5rem
+}
+.btn-custom1 {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.18rem;
+    font-weight: 600;
+    border-radius: 30px; /* rounded corners */
+    background-color: #ffffff; /* white background */
+    color:var(--support); /* your orange color */
+    text-decoration: none;
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+  }
+
+  .btn-custom1:hover {
+    color: #000000; /* black text on hover */
+    background-color: #ffffff; /* still white background */
+    border-color: #000000; /* optional: border turns black on hover */
+  }
+   .btn-custom {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1.15rem;
+    font-weight: 200;
+    border-radius: 30px; /* rounded corners */
+    background-color:var(--support); /* orange background */
+    color: #ffffff; /* white text */
+    text-decoration: none;
+    border: 2px solidvar(--support); /* orange border */
+    transition: all 0.3s ease;
+  }
+
+  .btn-custom:hover {
+    background-color: #ffffff; /* white background */
+    color:var(--support); /* orange text *//* keep orange border */
+    border:1px solid var(--support)
+  }
+/* Cards */
+.custom-card {
+  background-color: var(--dark);
+  color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Make first two cards overlap hero section */
+.overlap-row {
+  margin-top: -250px;   /* adjust depth of overlap */
+  position: relative;
+  z-index: 5;
+}
+
+
+.heading_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#networkwise_img {
+  margin-top: 3rem;
+  width: 35vw;
+  height: 15vh;
+  object-fit: contain; /* keeps proportions */
+}
+
+.video-container {
+  width: 90%;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Tablet fix */
+@media (min-width: 600px) and (max-width: 800px) {
+  .video-container video {
+    height: auto;      /* don’t force 100% height */
+    max-height: 100%;  /* respect container */
+    object-fit: contain; /* prevent black square */
+  }
+}
+/* Tablet */
+@media (max-width: 991px) {
+  .icon-col,
+  .icons-section .custom-col {
+    flex: 0 0 45%; /* 2 per row on tablets */
+    max-width: 45%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .icon-col,
+  .icons-section .custom-col {
+    flex: 0 0 100%; /* 1 per row on mobile */
+    max-width: 100%;
+  }
+}
+
+/* ✅ Wide screens ≥1700px */
+@media (min-width: 1700px) {
+  .container.my-5 {
+    max-width: 1400px;   /* wider container but still centered */
+    margin: 0 auto;
+  }
+
+}
+
+.video-container1 {
+  width: 75%;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.video-container1 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.custom-card {
+  background-color: var(--dark); /* your color */
+  color: #fff; /* white text for readability */
+  border-radius: 2rem !important;
+}
+.adam-banner {
+  background: url('images/banner2.png') center center / cover no-repeat;
+  min-height: 600px;
+  display: flex;
+  align-items: center;       /* vertical center */
+  justify-content: flex-end; /* push text to right side */
+  position: relative;
+  text-align: left;         /* align text inside to the right */
+  color: white;
+  padding-right: 12%;         /* add spacing from right edge */
+}
+
+/* Overlay text styling */
+.adam-text h2 {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.adam-text p {
+  font-size: 2.5rem;
+  margin-top: 10px;
+}
+/* Responsiveness */
+@media (min-width: 520px) and (max-width: 800px) {
+  .adam-banner {
+    justify-content: flex-end;  /* push content to the right */
+    text-align: right;          /* align text inside */
+    padding-right: 40px;        /* spacing from the right */
+  }
+
+  .adam-text h2 {
+    font-size: 2.4rem;
+  }
+
+  .adam-text p {
+    font-size: 1.8rem;
+  }
+}
+
+.feature-icon {
+  width: 48px;       /* adjust size */
+  height: 48px;      /* keeps consistent height */
+  object-fit: contain;  /* keeps aspect ratio */
+  flex-shrink: 0;    /* prevents shrinking */
+}
+.lead {
+  font-weight: 400 !important;
+  line-height:1.3;
+}
+.text-justify {
+  text-align: justify;
+}
+  .text-orange {
+    color:var(--support);
+  }
+  .custom-col {
+    padding-left: 0.5rem;  /* tighter spacing */
+    padding-right: 0.5rem;
+  }
+  .container {
+    margin-left:3.5rem;
+    margin-right:0.2rem;
+  }
+  .row.no-gutters {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .custom-col {
+    padding-left: 5px;
+    padding-right: 5px;
+    flex: 0 0 32%;
+    max-width: 32%;
+    margin-bottom: 10px;
+  }
+  @media(max-width: 768px){
+    .custom-col {
+      flex: 0 0 48%;
+      max-width: 48%;
+    }
+  }
+  @media(max-width: 576px){
+    .custom-col {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  /* Rounded Orange Button */
+  .btn-custom {
+    background-color:var(--support);
+    color: #fff;
+    padding: 0.75rem 1.8rem;
+    border: 2px solidvar(--support);
+    border-radius: 50px;   /* makes it pill-shaped */
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .btn-custom:hover {
+    background-color: #fff;
+    color:var(--support);
+  }
+.custom-hr {
+  border: none;
+  border-top: 3px solid #1a1529 !important; /* dark grey */
+  margin: 3rem 0;
+}
+  .text-orange {
+    color:var(--support) !important;
+  }
+ .custom-card {
+  background: #0F2139; /* base color */
+  color: white;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+.hero_heading{
+  text-align:center;
+  font-size:3.5rem;
+  margin-top:1.5rem;
+}
+.custom-card:hover {
+  transform: translateY(-5px); /* slight lift */
+  background:var(--gradient-main);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+.social-icons a {
+  color: #0b2343; /* default dark blue */
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #163e73; /* lighter blue on hover */
+}
+.contact-info{
+  margin-top:1rem;
+}
+/* 📱 Mobile optimization for iPhone & small devices */
+@media (max-width: 450px) {
+  /* Navbar */
+  .navbar {
+    padding: 10px 15px;
+  }
+  .navbar-brand img {
+    max-height: 40px;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* Banner */
+  .banner {
+    height: 320px;
+  }
+  .banner-content {
+    left: 15px;
+    bottom: 8%;
+    max-width: 90%;
+    text-align: center; /* center on small devices */
+  }
+  .banner-content h1 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+  .banner-content p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .banner-content h1::after {
+    width: 8rem;
+    height: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Hero Section */
+  #hero-section {
+    padding: 60px 15px;
+    min-height: auto;
+  }
+  #hero-section h1 {
+    font-size: 1.8rem;
+  }
+  #hero-section p {
+    font-size: 1rem;
+  }
+/* Hero Section 1 */
+#hero-section1 {
+  padding: 70px 20px 60px;   /* more top & bottom padding */
+  min-height: auto;
+  padding-bottom:8rem;
+}
+
+#hero-section1 h1 {
+  font-size: 2rem;           /* larger heading for visibility */
+  line-height: 1.3;
+  margin-bottom: 1.5rem;     /* space below heading */
+}
+
+#hero-section1 p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;       /* more gap below text */
+}
+
+ .custom-card {
+    margin-top: 8rem;     /* increases vertical gap between hero and cards */
+    padding: 1.1rem;      /* keep inner spacing comfortable */
+  }
+
+  /* ensure stacked columns have comfortable spacing */
+  .custom-col {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Adam Banner */
+  .adam-banner {
+    min-height: 300px;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+  }
+  .adam-text h2 {
+    font-size: 1.5rem;
+  }
+  .adam-text p {
+    font-size: 1rem;
+  }
+
+  /* Container spacing */
+  .container {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* Buttons */
+  .btn-custom,
+  .btn-custom1 {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+}
+/* Prevent horizontal scroll on small screens */
+@media (max-width: 550px) and (min-width: 350px) {
+   .icons-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 1rem; /* spacing between divs */
+  }
+  #hero-section1 {
+    min-height: 480px; /* still ensures breathing room */
+    padding: 2rem 1rem;
+  }
+.hero-heading {
+  font-size:2rem;
+}
+  #hero-section1 h1 {
+    font-size: 1.8rem;
+  }
+
+  #hero-section1 p {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .overlap-row {
+    margin-top: -200px;
+    position: relative;
+    z-index: 3;
+  }
+    #NWW+ .heading_img img {
+    width: 180px;   /* enlarge image */
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto; /* center with some bottom space */
+  }
+
+  #NWW+ h1 {
+    font-size: 2rem !important; /* reduce heading font size */
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  #NWW+ p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+  /* Adam banner alignment */
+  .adam-banner {
+    display: flex;
+    justify-content: flex-end;   /* push content to right */
+    text-align: right;
+  }
+
+  /* Hero heading text */
+  .hero_heading {
+    font-size: 2rem !important;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+    .icons-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem; /* slightly smaller gap */
+  }
+
+  .custom-card {
+    max-width: 95%;   /* prevent overflow */
+    width: 100%;      /* keep them responsive */
+    margin: 0 auto;   /* center within column */
+  }
+}
+@media (min-width: 520px) and (max-width: 920px) {
+  .row.g-4.justify-content-center > .col-md-5 {
+    flex: 0 0 100% !important;  /* full width */
+    max-width: 100% !important; /* prevent 2 columns */
+  }
+}
+@media (min-width: 1700px) {
+  .icons-section .feature-icon {
+    width: 100px;
+    height: auto;
+    margin-right:0;
+  }
+  .icons-section .custom-col {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; /* center each icon+text block */
+  text-align: left;
+  padding: 0 1rem; /* equal left/right spacing */
+}
+
+  .icons-section h4 {
+    font-size: 2.2rem; 
+  }
+
+  .icons-section p {
+    font-size: 1.5rem; 
+  }
+
+  .icons-section .custom-col {
+    gap: 0.75rem;
+    margin-bottom: 2rem; 
+  }
+}
+
+@media (min-width: 1700px) {
+  .video-container {
+    max-width: 1800px;
+  }
+}
+/* For ultrawide screens (1700px and up) */
+@media (min-width: 1700px) {
+  .navbar .container {
+    max-width: 1600px;  /* expand the container */
+    margin: 0 auto;     /* keep it centered */
+    padding-left: 40px; /* optional spacing inside */
+    padding-right: 40px;
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+/* For ultrawide screens (1700px and up) */
+@media (min-width: 1700px) {
+  footer .container {
+    max-width: 1600px;  /* expand container */
+    margin: 0 auto;     /* center it */
+    padding-left: 40px; /* give breathing room */
+    padding-right: 40px;
+  }
+
+  footer .row {
+    justify-content: space-between; /* spread items evenly */
+    text-align: left;              /* optional: make cols align left */
+  }
+
+  footer .feature {
+    flex: 1; /* make all three columns equal width */
+  }
+}
+@media (min-width: 390px) and (max-width: 490px) {
+  .video-container {
+    width: 95%;        /* take almost full width */
+    max-width: 480px;  /* but don’t overshoot */
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+  }
+}
+/* Perfectly center and space cards on mid-mobile screens */
+@media (min-width: 450px) and (max-width: 545px) {
+  .custom-card {
+    width: 85%;        /* smaller width for breathing space */
+    margin-left: auto; /* center horizontally */
+    margin-right: auto;
+  }
+}
+/* Bigger typography on ultra-wide screens */
+@media (min-width: 1700px) {
+  h1 {
+    font-size: 3rem;   /* very large hero headings */
+  }
+
+  h2 {
+    font-size: 2.25rem; /* section titles */
+  }
+
+  h3 {
+    font-size: 1.75rem; /* smaller headings */
+  }
+
+  p {
+    font-size: 1.25rem; /* larger paragraph text */
+    line-height: 1.8;   /* extra breathing room */
+  }
+}
+.container-fluid{
+  max-width:90%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

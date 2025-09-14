@@ -1,0 +1,713 @@
+:root {
+  --primary-color: #31B3F4;   /* Bright Blue */
+  --secondary-color: #F16031; /* Orange */
+  --light-gray: #E6E6E6;      /* Light Gray */
+}
+
+/* Tablet fix */
+@media (max-width: 991px) {
+  .banner {
+    min-height: 70vh; /* shorter height */
+  }
+  .banner-content1 {
+    align-items: center !important; /* center vertically */
+  }
+    .banner .event-details {
+    gap: 0.5rem !important;   /* smaller gap between items */
+    row-gap: 0.5rem !important; /* reduce vertical gap between rows */
+    justify-content: center; /* optional: center items on smaller screens */
+  }
+}
+
+/* Mobile fix */
+@media (max-width: 576px) {
+  .banner {
+    min-height: 95vh;   /* more height so button fits */
+    padding-bottom: 2rem; /* breathing room */
+  }
+  .banner h1 {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+  .banner h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .banner p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+}
+
+  /* Tablet + Mobile button center + tighter icon spacing */
+@media (max-width: 991px) {
+  .banner-btn {
+    text-align: center !important; /* center button */
+  }
+  .banner .d-flex.align-items-center.gap-2 {
+    gap: 0.4rem !important; /* reduce space between icon and text */
+  }
+}
+
+
+.banner {
+  position: relative;
+  min-height: 90vh; /* full screen */
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-orange {
+  color: var(--secondary-color) !important;
+}
+.banner_h1{
+  border:none;
+   font-size:3.6rem;
+   line-height:0.8
+}
+.banner_h2{
+   color:var(--primary-color) !important;
+   border:none; 
+   font-size:2.7rem;
+   line-height:1;
+}
+/* Remove any accidental underline or border */
+.banner h1,
+.banner h2,
+.banner p {
+  border: none !important;
+  text-decoration: none !important;
+}
+
+/* Center the content properly */
+.banner-content1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* center horizontally */
+  justify-content: center; /* center vertically */
+  text-align: center;      /* center headings & subheadings */
+  padding: 2rem;           /* balanced spacing */
+}
+.banner-subheading{
+  font-size: 1.2rem;
+  line-height: 1.2; 
+}
+/* Keep list readable but centered under text */
+.who-should-attend-list {
+  max-width: 920px;
+  margin: 1.5rem auto 0 auto; /* space above list, centered block */
+  padding-left: 1.5rem;       /* indentation for bullets */
+  list-style-type: disc;
+  list-style-position: outside;          /* improve readability */
+         /* keep bullets aligned left */
+}
+
+/* Bullet list items */
+.who-should-attend-list li {
+  color: #fff;
+  margin-bottom: 1rem;
+    font-size: 1.2rem;
+  line-height: 1.1;  /* spacing between points */
+}
+
+  .agenda-table td {
+    vertical-align: top;
+    padding: 1rem;
+  }
+
+  .agenda-table td:first-child {
+    font-weight: 700;
+    width: 140px;
+    white-space: nowrap;
+  }
+
+  .agenda-table strong {
+    font-weight: 600;
+  }
+
+  .agenda-table small {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  /* Responsive adjustments for small devices */
+@media (min-width: 350px) and (max-width: 410px) {
+  .banner-content1 h2 {
+    font-size: 1.3rem !important;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .banner-content1 h1 {
+    font-size: 1.9rem !important;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .banner-content1 p {
+    font-size: 0.7rem !important;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  /* Event details stacked */
+  .banner-content1 .d-flex {
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 0.8rem !important;
+  }
+
+  /* Button full width and larger text */
+  .banner-content1 .btn {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    font-size: 0.9rem !important;
+    padding: 0.75rem 1rem;
+  }
+}
+
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .agenda-table td {
+      display: block;
+      width: 100%;
+    }
+    .agenda-table td:first-child {
+      background: #f8f9fa;
+      border-bottom: none;
+      width: 100%;
+    }
+    .agenda-table tr {
+      display: block;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      overflow: hidden;
+    }
+  }
+  
+/* Responsive fixes */
+@media (max-width: 992px) {
+  .workshop-box h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .workshop-box ul {
+    text-align: center;
+  }
+
+  .workshop-box button {
+    display: block;
+    margin: 0 auto; /* centers button */
+  }
+}
+/* Agenda Section Alignment */
+.agenda-section .bg-white {
+  padding: 2rem 2.5rem;  /* reduce padding compared to p-5 */
+  margin: 0 auto;        /* center the block */
+  max-width: 1000px;     /* keep width consistent */
+}
+
+.agenda-section .table {
+  margin: 0;             /* remove extra spacing */
+}
+
+.agenda-section h2 {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+ /* reset bootstrap's table cell bg */
+  .agenda-table > :not(caption) > * > * {
+    background-color: transparent !important;
+  }
+
+  /* alternate row background colors */
+  .agenda-table tbody tr:nth-child(odd) > * {
+    background-color: #FFFFFF !important;
+  }
+  .agenda-table tbody tr:nth-child(even) > * {
+    background-color: var(--light-gray) !important;
+  }
+
+  /* optional: border styling */
+  .agenda-table {
+    border-color: #ddd;
+  }
+  .agenda-table td, .agenda-table th {
+    border-color: #ddd;
+  }
+
+.workshop-box {
+  background: #000;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+.carousel-cards {
+  display: flex;
+  overflow-x: auto;
+  gap: 1.5rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-cards::-webkit-scrollbar { display: none; }
+
+.carousel-cards .card {
+  flex: 0 0 calc(33.333% - 1rem);  /* 3 cards on desktop */
+  height: 22rem;        /* ~352px */
+  border-radius: 1.21rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+.carousel-cards .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* vertically center */
+  align-items: center;       /* horizontally center */
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+}
+.leaders-section{
+  background:var(--light-gray);
+}
+.circle-num {
+  width: 50px;
+  height: 50px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  box-shadow: 0 0 15px rgba(255, 94, 43, 0.7);
+}
+.card_h4 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;              /* SemiBold */
+  font-style: normal;            /* SemiBold is handled by weight */
+  font-size: 1.7rem;               /* 32px = 2rem */
+  line-height: 1.07;             /* 107% */
+  letter-spacing: -0.015em;      /* -1.5% */
+  vertical-align: bottom;
+  text-transform: capitalize;    /* kept from before (optional) */
+}
+.card_p {
+  font-family: 'Lato', sans-serif;
+  line-height:1;
+  font-size:1rem;
+}
+
+
+/* Tablet: 2 cards per row */
+@media (max-width: 991px) {
+  .carousel-cards .card {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+/* Mobile: 1 card full width */
+@media (max-width: 575px) {
+  .carousel-cards .card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Responsive fix for banner section between 390px–450px */
+@media (min-width: 320px) and (max-width: 540px) {
+  .banner-content1 {
+    padding: 1.5rem 1rem;        /* reduce side padding */
+    max-width: 92%;              /* narrower content */
+    margin: 0 auto;              /* center align */
+    text-align: center !important;
+    display: flex;              /* use flexbox to center */
+    align-items: center !important;        /* vertical center */
+    justify-content: center !important; 
+  }
+
+  .banner-content1 h2 {
+    font-size: 1.6rem !important;
+    line-height: 1.2;
+    text-align: center !important;
+  }
+
+  .banner-content1 h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+    text-align: left !important;
+  }
+
+  .banner-content1 p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: center !important;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Event details smaller + tighter line height */
+  .banner-content1 .d-flex {
+    flex-direction: column;     /* stack icons vertically */
+    gap: 0.3rem !important;     /* reduce spacing */
+    align-items: center;        /* center icons + text */
+    margin-bottom: 1rem;
+  }
+
+  .banner-content1 .d-flex div {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  /* Button centered properly */
+  .banner-content1 .text-center {
+    margin-top: 1rem;
+  }
+
+  .banner-content1 a.btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.6rem;
+    border-radius: 30px;
+    display: inline-block;
+  }
+}
+/* Responsive adjustments for 390px–450px screens */
+@media (min-width: 320px) and (max-width: 540px) {
+  .banner {
+    padding: 20px 10px;
+     /* some breathing space */
+  }
+
+  .banner-content {
+    text-align: center; 
+    padding: 15px;
+    margin-top:2.5rem;
+    align-items: flex-start !important; /* push content up, not vertically centered */
+    justify-content: flex-start !important;
+  }
+
+  .banner-box {
+    background: rgba(0, 0, 0, 0.6); /* better readability */
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .banner-heading {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-align: left; /* heading aligned left like your 2nd screenshot */
+  }
+
+  .banner-subheading {
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .who-should-attend-list {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    padding-left: 18px; /* proper bullet indentation */
+    margin-bottom: 0;
+  }
+
+  .who-should-attend-list li {
+    margin-bottom: 10px;
+  }
+}
+/* Tablet design: 2 cards per row, full width */
+@media (min-width: 700px) and (max-width: 1200px) {
+  .carousel-container {
+    display: flex;
+    flex-wrap: wrap; /* allow wrapping */
+    gap: 1rem; /* spacing between cards */
+    justify-content: center;
+    padding: 0 1rem;
+  }
+
+  .carousel-card {
+    flex: 0 0 calc(50% - 1rem); /* exactly 2 per row */
+    max-width: calc(50% - 1rem);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+  }
+}
+
+
+/* Tablet view (Surface Pro, iPad, etc.) */
+@media (min-width: 700px) and (max-width: 1200px) {
+  .banner-content .container {
+    max-width: 500px;    /* Narrower width for compact look */
+    margin: 0 auto;
+    padding: 1rem 1rem;  /* Reduced top/bottom + balanced left/right */
+    text-align: left;
+  }
+
+  .banner-heading {
+    font-size: 2.6rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  .banner-subheading {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .banner-list li {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .banner-content .btn {
+    font-size: 1.5rem;
+    padding: 1rem 2.2em;  /* Slightly smaller than before */
+    border-radius: 6px;
+  }
+
+  .banner-content i {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+
+
+
+/* Default large screen styles */
+.banner-heading {
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+}
+.banner-subheading {
+  font-size: 1.5rem;
+}
+.banner-list {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+/* Tablet adjustments */
+@media (max-width: 990px) {
+  .banner-heading {
+    font-size: 2rem;
+  }
+  .banner-subheading {
+    font-size: 1.3rem;
+  }
+  .banner-list {
+    font-size: 1rem;
+    align-content: center;
+  }
+
+  .banner .container {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    align-content: center;
+  }
+
+  .banner-content1 {
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: left !important;
+  }
+
+  .banner-content1 h2,
+  .banner-content1 p {
+    text-align: left !important;
+  }
+
+  .banner-content1 ul {
+    padding-left: 18px !important;
+    margin-left: 0 !important;
+  }
+
+  .banner-content1 ul li {
+    text-align: left !important;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .agenda-table td {
+    display: block;
+    width: 100% !important;
+    text-align: left;
+  }
+
+  .agenda-table tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .agenda-table td:first-child {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+}
+@media (min-width: 1700px) {
+  .icons-section {
+    max-width: 1500px;  /* adjust this value as needed */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .banner-content1 {
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 575px) {
+  .agenda-table td {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+  .agenda-table td:first-child {
+    font-size: 1rem;
+  }
+}
+
+/* Feature Section */
+#featured-3 h4 {
+  font-weight: 700;
+}
+#featured-3 p {
+  color: #333;
+  font-size: 0.95rem;
+}
+/* Responsive adjustments for very wide screens (1700px and above) */
+@media (min-width: 1700px) {
+  .banner {
+    min-height: 60vh; /* lower the banner height (default 100vh) */
+  }
+
+  .banner-content1 h2 {
+    font-size: 4em !important;   /* increased heading size */
+    line-height: 1.2;
+  }
+
+  .banner-content1 h1 {
+    font-size: 5em !important; /* larger main heading */
+    line-height: 1.1;
+  }
+
+  .banner-content1 p {
+    font-size: 1.75em !important; /* larger subtitle */
+    line-height: 1.6;
+    max-width: 75%;
+  }
+
+  .banner-content1 .d-flex {
+    gap: 4rem !important;        /* more spacing between icons */
+  }
+
+  .banner-content1 .d-flex span {
+    font-size: 1.75em !important;
+  }
+
+  .banner-content1 i {
+    font-size: 3em !important;   /* bigger icons */
+  }
+
+  .banner-content1 a.btn {
+    font-size: 1.75em !important;
+    padding: 1em 2.5em !important;
+    border-radius: 60px;
+  }
+  
+}
+@media (min-width: 1400px) {
+  .container-fluid {
+    max-width: 70%;   /* take 85% of screen width */
+    margin: 0 auto;   /* center it */
+  }
+}
+@media (min-width: 900px) {
+  .container-fluid {
+    max-width: 90%;   /* 85% of screen width */
+    margin: 0 auto;   /* center horizontally */
+  }
+}
+/* ✅ Section 1: Who Should Attend (centered) */
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .banner-content1.attend { /* add class 'attend' to first banner */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    text-align: center !important;
+  }
+
+  .banner-content1.attend .container {
+    max-width: 85%;
+    margin: 0 auto;
+    text-align: center !important;
+  }
+
+  .banner-content1.attend .banner-box {
+    text-align: center !important;
+  }
+
+  .banner-content1.attend h2,
+  .banner-content1.attend p,
+  .banner-content1.attend h3,
+  .banner-content1.attend h4 {
+    text-align: center !important;
+  }
+
+  .banner-content1.attend ul {
+    list-style-position: inside;
+    padding-left: 0;
+    text-align: center !important;
+  }
+
+  .banner-content1.attend ul li {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+  }
+}
+
+/* ✅ Section 2: Future-Proof Executive (left-aligned only headings + p) */
+@media (min-width: 1000px) and (max-width: 1100px) {
+  .banner-content1.futureproof h2,
+  .banner-content1.futureproof h1,
+  .banner-content1.futureproof p {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+}
+
+
