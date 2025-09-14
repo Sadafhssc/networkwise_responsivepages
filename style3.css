@@ -173,7 +173,20 @@
     padding: 0.75rem 1rem;
   }
 }
+@media (min-width: 1700px) {
+  .row.align-items-center {
+    max-width: 1200px;   /* keep centered inside wide screens */
+    margin: 0 auto;      /* center horizontally */
+    display: flex;       /* ensure flexbox alignment */
+    justify-content: space-between; /* space both sections evenly */
+    gap: 60px;           /* adjust spacing between left and right */
+  }
 
+  .row.align-items-center .col-lg-5 {
+    flex: 1;             /* let both sides take equal width */
+    max-width: 48%;      /* balance width */
+  }
+}
 
   /* Mobile */
   @media (max-width: 768px) {
@@ -709,5 +722,6 @@
     margin-right: auto !important;
   }
 }
+
 
 
